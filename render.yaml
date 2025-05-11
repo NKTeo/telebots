@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: telegram-bots
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: ENVIRONMENT
+        value: production
+      - key: WIKI_FACTS_TELE_TOKEN
+        sync: false
+      - key: BUSINESS_IDEAS_TELE_TOKEN
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: SERVER_URL
+        sync: false 
